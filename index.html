@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roblox 認証</title>
+<style>
+body {
+  background: #090909;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 40px 15px;
+}
+.card {
+  max-width: 350px;
+  margin: auto;
+  padding: 25px;
+  background: #171717;
+  border: 1px solid #ff3030;
+  border-radius: 18px;
+}
+h1 { color: #ff3030; }
+input, button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+input {
+  background: #090909;
+  color: white;
+  border: 1px solid #555;
+}
+button {
+  background: #ff3030;
+  color: white;
+  border: 0;
+  font-weight: bold;
+}
+#result { margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>ROBLOX</h1>
+  <h2>認証センター</h2>
+  <p>ユーザー名を入力して認証に進もう！</p>
+
+  <form id="form">
+    <input id="username"
+      placeholder="Robloxユーザー名"
+      maxlength="20"
+      pattern="[A-Za-z0-9_]+"
+      required>
+    <button type="submit">認証する →</button>
+  </form>
+
+  <p id="result"></p>
+  <small>パスワードは入力しないでください。</small>
+</div>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const name = document.getElementById("username").value.trim();
+  document.getElementById("result").textContent =
+    name + " さん、入力を確認したよ！";
+});
+</script>
+</body>
+</html>
